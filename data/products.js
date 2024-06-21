@@ -1,3 +1,15 @@
+export function getProduct(productId){
+    let matchingProduct;
+
+    //This function is used to check if the product.id is equal to the variable productId, this is used to normalizing the data
+    products.forEach((product) =>{
+        if(product.id === productId){
+            matchingProduct = product;
+        }
+    });
+    return matchingProduct;
+}
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
