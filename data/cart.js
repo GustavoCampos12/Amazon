@@ -1,4 +1,9 @@
-export let cart = JSON.parse(localStorage.getItem('cart'));
+export let cart;
+
+loadFromStorage();
+
+export function loadFromStorage(){
+    cart = JSON.parse(localStorage.getItem('cart'));
 
 if(!cart){
     cart = [{ // ao adicionar esses produtos o carrinho adiciona mais do que deveria
@@ -12,6 +17,7 @@ if(!cart){
         quantity: 1,
         deliveryOptionId: '2'
     }];
+}
 }
 
 function saveToStorage(){
